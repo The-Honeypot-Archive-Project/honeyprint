@@ -1,4 +1,4 @@
-Honeyprint
-==========
+# Honeyprint Honeypot
 
-Printer honeypot PoC
+Honeypot that emulates a printer server using the IPP protocol (pkipplib).
+
