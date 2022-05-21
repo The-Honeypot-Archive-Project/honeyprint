@@ -30,16 +30,16 @@ class PrintServer(object):
         pass
 
     def handle(self, sock, address):
-        print address
+        print(address)
         data = sock.recv(8192)
-        print repr(data)
+        print(repr(data))
         try:
             body = data.split('\r\n\r\n', 1)[1]
         except IndexError:
             body = data
         request = pkipplib.IPPRequest(body)
         request.parse()
-        print request
+        print(request)
         request = pkipplib.IPPRequest(operation_id=pkipplib.CUPS_GET_DEFAULT)
         request.operation["attributes-charset"] = ("charset", "utf-8")
         request.operation["attributes-natural-language"] = ("naturalLanguage", "en-us")
