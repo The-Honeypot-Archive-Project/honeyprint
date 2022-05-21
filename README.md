@@ -11,3 +11,15 @@ The following packages are required in order for honeyprint to operate: gevent, 
 ```bash
 pip3 install -r requirements.txt
 ```
+
+### Run honeyprint
+
+For Linux systems, screen is recommended since honeyprint does not run as a daemon and will terminate if a terminal is lost. To activate honeyprint simply issue the command:
+
+```bash
+# run honeyprint in a screen
+screen -d -m -S honeyprint python3 server.py
+
+# to attach to the running screen
+screen -r honeyprint
+```
