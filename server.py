@@ -54,5 +54,9 @@ class PrintServer(object):
 
 if __name__ == "__main__":
     ps = PrintServer()
-    print_server = ps.get_server("localhost", 9100)
+    print_address='localhost'
+    print_port=9100
+
+    print_server = ps.get_server(print_address, print_port)
+    print(f'Started honeyprint on {print_address}:{print_port}')
     print_server.serve_forever()
