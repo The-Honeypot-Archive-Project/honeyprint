@@ -17,6 +17,7 @@
 
 
 import logging
+import argparse
 from pkipplib import pkipplib
 
 from gevent.server import StreamServer
@@ -53,10 +54,19 @@ class PrintServer(object):
 
 
 if __name__ == "__main__":
-    ps = PrintServer()
-    print_address='localhost'
-    print_port=9100
 
+    # Parse input parameters
+    parser = argparse.ArgumentParser(description='Honeyprint Honeypot')
+    parser.add_argument('-i','--serveraddress', help='Select deploy server address (default localhost)', nargs='?', const='127.0.0.1', required=False)
+    parser.add_argument('-p','--port', help='Select port number (default 9100)', nargs='?', const=9100, required=False)
+    args = vars(parser.parse_args())
+    if args['serveraddress']:
+            print_address=args['serveraddress']
+    if args['port']:
+            print_port=int(args['port'])
+
+    # Start print server
+    ps = PrintServer()
     print_server = ps.get_server(print_address, print_port)
     print(f'Started honeyprint on {print_address}:{print_port}')
     print_server.serve_forever()
