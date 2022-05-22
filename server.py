@@ -16,6 +16,7 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 
+import sys
 import logging
 import argparse
 from pkipplib import pkipplib
@@ -54,6 +55,8 @@ class PrintServer(object):
 
 
 if __name__ == "__main__":
+    print_address="127.0.0.1"
+    print_port=9100
 
     # Parse input parameters
     parser = argparse.ArgumentParser(description='Honeyprint Honeypot')
@@ -69,4 +72,8 @@ if __name__ == "__main__":
     ps = PrintServer()
     print_server = ps.get_server(print_address, print_port)
     print(f'Started honeyprint on {print_address}:{print_port}')
-    print_server.serve_forever()
+    try:
+        print_server.serve_forever()
+    except KeyboardInterrupt as e:
+        print('Stopped honeyprint')
+        sys.exit(0)
