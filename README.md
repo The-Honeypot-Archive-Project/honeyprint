@@ -23,3 +23,11 @@ screen -d -m -S honeyprint python3 server.py
 # to attach to the running screen
 screen -r honeyprint
 ```
+
+### Run honeyprint using Docker
+
+Run honeyprint using a Docker image from DockerHub in one command:
+
+```bash
+docker container run -d --name honeyprint -p 9100:9100 verovaleros/honeyprint:latest
+```
