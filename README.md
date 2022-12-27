@@ -12,6 +12,8 @@ Honeypot that emulates a printer server using the IPP protocol (pkipplib).
 The following packages are required in order for honeyprint to operate: gevent, pkipplib. Install the required dependencies with:
 
 ```bash
+git clone https://github.com/The-Honeypot-Archive-Project/honeyprint.git
+cd honeyprint/
 pip3 install -r requirements.txt
 ```
 
