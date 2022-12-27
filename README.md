@@ -29,6 +29,23 @@ screen -d -m -S honeyprint python3 server.py
 screen -r honeyprint
 ```
 
+### Troubleshooting
+
+If you do not see the server running it's possible you are having issues with the library used. It's possible that if you run it outside docker you will see this error:
+
+```bash
+    from pkipplib import pkipplib
+  File "/usr/local/lib/python3.10/dist-packages/pkipplib/pkipplib.py", line 308
+    raise KeyError, key
+                  ^
+```
+
+The error is caused by the not-ported pkipplib library to Python3. Run the following command to solve:
+
+```bash
+2to3 -w /usr/local/lib/python3.10/dist-packages/pkipplib/pkipplib.py
+```
+
 ### Run honeyprint using Docker
 
 Run honeyprint using a Docker image from DockerHub in one command:
