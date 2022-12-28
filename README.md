@@ -1,7 +1,7 @@
 # Honeyprint Honeypot
 [![Docker Image CI](https://github.com/The-Honeypot-Archive-Project/honeyprint/actions/workflows/docker-image.yml/badge.svg)](https://github.com/The-Honeypot-Archive-Project/honeyprint/actions/workflows/docker-image.yml)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/The-Honeypot-Archive-Project/honeyprint)
-![Docker Pulls](https://img.shields.io/docker/pulls/The-Honeypot-Archive-Project/honeyprint?color=green)
+![Docker Pulls](https://img.shields.io/docker/pulls/thehoneypotarchiveproject/honeyprint?color=green)
 
 Honeypot that emulates a printer server using the IPP protocol (pkipplib).
 
