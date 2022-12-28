@@ -51,5 +51,5 @@ The error is caused by the not-ported pkipplib library to Python3. Run the follo
 Run honeyprint using a Docker image from DockerHub in one command:
 
 ```bash
-docker container run -d --name honeyprint -p 9100:9100 verovaleros/honeyprint:latest
+docker container run -d --name honeyprint -p 9100:9100 thehoneypotarchiveproject/honeyprint:latest
 ```
